@@ -12,5 +12,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          cat results.txt >> "File uploaded
-          cml-send-comment report.md
+          cat > report.txt <<EOF
+          ================
+          File Uploaded.
+          ================
+          EOF
+          cml-send-comment report.txt
